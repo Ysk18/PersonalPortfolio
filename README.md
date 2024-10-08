@@ -31,3 +31,7 @@ At the bottom of the game, after the end of the game, a text appears telling you
 ## References
 ChatGPT was used for bug fixing and editing some functions.
 W3Schools website was used to look at CSS tools.
+
+
+## Personal Portfolio includes Memory Game Link
+[Memory Game](https://ysk18.github.io/PersonalPortfolio/Portfolio/TermProject)
