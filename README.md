@@ -34,4 +34,4 @@ W3Schools website was used to look at CSS tools.
 
 
 ## Personal Portfolio includes Memory Game Link
-[Memory Game](https://ysk18.github.io/PersonalPortfolio/Portfolio/TermProject)
+[Memory Game](https://ysk18.github.io/PersonalPortfolio/Portfolio/TermProject.html)
