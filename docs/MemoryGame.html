@@ -104,36 +104,45 @@
 			align-items: center;
 			align-content: center;
 		}
+
+		#all {
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			align-content: center;
+		}
 	</style>
 </head>
 
 <body>
-	<h1> Memory Game </h1>
+	<div id="all">
+		<h1> Memory Game </h1>
 
-	<div id="upperPart">
+		<div id="upperPart">
 
-		<div id="gameContainer">
-			<img id="1" class="Y" src="Yy.svg" onclick="clickImage(1)">
-			<img id="2" class="A" src="Aa.svg" onclick="clickImage(2)">
-			<img id="3" class="V" src="Vv.svg" onclick="clickImage(3)">
-			<img id="4" class="U" src="Uu.svg" onclick="clickImage(4)">
-			<img id="5" class="Z" src="Zz.svg" onclick="clickImage(5)">
+			<div id="gameContainer">
+				<img id="1" class="Y" src="Yy.svg" onclick="clickImage(1)">
+				<img id="2" class="A" src="Aa.svg" onclick="clickImage(2)">
+				<img id="3" class="V" src="Vv.svg" onclick="clickImage(3)">
+				<img id="4" class="U" src="Uu.svg" onclick="clickImage(4)">
+				<img id="5" class="Z" src="Zz.svg" onclick="clickImage(5)">
+			</div>
+
+			<div id="buttons">
+				<button class="startButton" onclick="startGame();">START</button>
+				<button class="resetButton" onclick="resetGame()" disabled>RESET</button>
+				<p>Score: <span id="score">0</span></p>
+			</div>
 		</div>
 
-		<div id="buttons">
-			<button class="startButton" onclick="startGame();">START</button>
-			<button class="resetButton" onclick="resetGame()" disabled>RESET</button>
-			<p>Score: <span id="score">0</span></p>
+		<div id="result">
+
 		</div>
+		<p id="rules" style="color:aquamarine;"> <br> <br> You have 2 seconds to memorize the places of the cards in the
+			correct order.</p>
+
 	</div>
-
-	<div id="result">
-
-	</div>
-	<p id="rules" style="color:aquamarine;"> <br> <br> You have 2 seconds to memorize the places of the cards in the
-		correct order.</p>
-
-
 	<!--  <img class="Card" src="Card.svg"> -->
 	<!--  
 	Önce scriptte
@@ -143,6 +152,13 @@
 	 -->
 	<script>
 		//I first create a list of indexes and mixed, then I match the cards with the list order. So, I obtained 
+
+		document.addEventListener("contextmenu", (event) => event.preventDefault()); // Disable right-click
+		document.addEventListener("keydown", (event) => {
+			if (event.ctrlKey && (event.key === "I" || event.key === "J" || event.key === "U" || event.key === "S")) {
+				event.preventDefault(); // Prevents opening DevTools
+			}
+		});
 
 		function coverCard() { // I'm hiding the card with changing the background color to the black.
 			var images = document.querySelectorAll("img");
@@ -236,7 +252,7 @@
 		}
 
 		function resetGame() {
-			controlVariable += 1
+			controlVariable = 1
 			document.getElementById("result").innerHTML = "Good Luck :)";
 			startButton.disabled = false;
 			resetButton.disabled = true;
