@@ -80,7 +80,7 @@
 		#content {
 			display: flex;
 			flex-direction: column;
-
+			align-items: center;
 
 		}
 
@@ -89,6 +89,94 @@
 			display: flex;
 			flex-direction: column;
 			margin-left: 80px;
+			margin-right: 80px;
+		}
+
+		#intro {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		h3 {
+			margin-left: 5px;
+			font-family: sans-serif;
+			color: ghostwhite;
+		}
+
+		#projects {
+			color: aliceblue;
+			font-size: xx-large;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-bottom: 20px;
+			text-shadow: 2px 2px 5px black;
+		}
+
+		/* Project Section*/
+		.projects-container {
+			display: flex;
+			gap: 15px;
+			overflow-x: auto;
+			/* Enables scrolling */
+			white-space: nowrap;
+			/* Prevents wrapping */
+			padding: 15px;
+			scroll-behavior: smooth;
+			/* Smooth scrolling */
+		}
+
+		/* Hide Scrollbar */
+		.projects-container::-webkit-scrollbar {
+			display: none;
+			/* Hides scrollbar in WebKit browsers */
+		}
+
+		/* Project Items*/
+		.project-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			background: rgba(255, 255, 255, 0.1);
+			/* Slight transparency*/
+			padding: 15px;
+			width: 90%;
+			/* Same size for all boxes */
+			height: 120px;
+			/* Adjust height for consistency */
+			border-radius: 10px;
+			max-width: 95%;
+			border-radius: 10px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+			transition: transform 0.3s ease-in-out, background 0.3s;
+		}
+
+		/* Hover Effect */
+		.project-item:hover {
+			transform: scale(1.05);
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		/* Links*/
+		.project-item a {
+			color: #ffcc00;
+			/* Bright color for visibility*/
+			text-decoration: none;
+			font-weight: bold;
+			transition: color 0.3s;
+		}
+
+		.project-item a:hover {
+			color: #ffa500;
+			/* Slight color change on hover*/
+		}
+
+		/* Mobile-Friendly*/
+		@media (max-width: 600px) {
+			.project-item {
+				width: 90%;
+			}
 		}
 	</style>
 </head>
@@ -98,45 +186,59 @@
 		<h1 id="homepage"> Welcome to My Homepage </h1>
 		<h1 id="about"> About me </h1>
 		<div id="content">
-			<img src="Profile.jpg" alt="Yavuz Selim Kara" width="231,6" height="308,8">
-			<p id="introduction">
-				I'm Yavuz Selim Kara. I'm a first-year
-				<br> computer engineering student at
-				<br> Istanbul Technical University.
-				<br> Next semester, I'll be sophomere.
-				<br> I am from Konya, and I stay in a
-				<br> dorm at the campus. I like playing
-				<br> table tennis, basketball, and volleyball.
-			</p>
+			<div id="intro">
+				<img src="Profile.jpg" alt="Yavuz Selim Kara" width="231,6" height="308,8">
+				<p id="introduction">
+					I'm Yavuz Selim Kara. I'm a computer engineering student at
+					Istanbul Technical University.
+					I'll be graduated in 2027.
+					I am from Konya, and I stay in a
+					dorm at the Ayazaga campus. I like playing
+					table tennis, basketball, and volleyball.
+				</p>
+			</div>
 			<div id="academic">
 				<h2 style="margin-left: 10px;"> Academic Interests </h2>
 				<p style="margin-left: 20px; margin-top: 5px; text-align: center;">
-					<br> I was on a project team for 4 months last year.
-					<br> I tried many parts of computer engineering, such as
-					<br> cyber security, web developing, AI, machine learning, etc.
-					<br> I participated in training programs organized by Cyber Security
-					<br> and ACM school student clubs. Shortly, I'm trying to develop myself.
-					<br> I noticed that I loved making algorithms and dealing with them.
-					<br> So, at this time, I think I'll continue with the machine learning and AI parts.
-					<br> However, this doesn't mean I won't make websites, games, or any other things.
-					<br> All areas of computer engineering are interesting to me.
+					I was on a project team for 4 months in 2022-2023.
+					I tried many parts of computer engineering, such as
+					cyber security, web developing, AI, machine learning, etc.
+					I participated in training programs organized by Cyber Security
+					and ACM school student clubs. Shortly, I'm trying to develop myself.
+					I noticed that I loved making algorithms and dealing with them.
+					So, at this time, I think I'll continue with the machine learning and AI parts.
+					However, this doesn't mean I won't make websites, games, or any other things.
+					All areas of computer engineering are interesting to me.
 				</p>
 			</div>
 
 		</div>
 	</div>
-	<h3 id="projects" style="color: aliceblue; font-size:xx-large;"> <br> <br> Projects</h3>
+	
+	<h3 id="projects">Projects</h3>
 
-	<p style="color: white;font-weight: bold; text-shadow: 0.5px 0.5px 1px black; margin-top: 10px;">
-		<br> Film Recommender: &nbsp; &nbsp;<a href="https://ysk18.github.io/FilmRecommender/"> What is the next movie?
-		</a>
-	</p>
-	<p style="color: white;font-weight: bold; text-shadow: 0.5px 0.5px 1px black; margin-top: 10px;">
-		<br> Anroid game app: &nbsp; &nbsp;<a href="MemoryGame.html"> Star Chase</a>
-	</p>
-	<p style="color: white;font-weight: bold; text-shadow: 0.5px 0.5px 1px black; margin-top: 10px;">
-		<br> Click this link to play the game : &nbsp; &nbsp;<a href="MemoryGame.html">Memory Game</a>
-	</p>
+	<div class="projects-container">
+		<div class="project-item">
+			<p>🎥 Film Recommender: <a href="https://ysk18.github.io/FilmRecommender/"><br>What is the next movie?</a>
+			</p>
+		</div>
+		<div class="project-item">
+			<p>🎮 Android Game App: <a href="MemoryGame.html"><br>Star Chase</a></p>
+		</div>
+		<div class="project-item">
+			<p>🕹️ Click this link to play: <a href="MemoryGame.html"><br>Memory Game</a></p>
+		</div>
+		<div class="project-item">
+			<p>🎥 Film Recommender: <a href="https://ysk18.github.io/FilmRecommender/"><br>What is the next movie?</a>
+			</p>
+		</div>
+		<div class="project-item">
+			<p>🎮 Android Game App: <a href="MemoryGame.html"><br>Star Chase</a></p>
+		</div>
+		<div class="project-item">
+			<p>🕹️ Click this link to play: <a href="MemoryGame.html"><br>Memory Game</a></p>
+		</div>
+	</div>
 </body>
 
 </html>
