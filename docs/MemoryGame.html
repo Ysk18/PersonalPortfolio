@@ -85,10 +85,29 @@
 
 		button {
 			cursor: pointer;
-			padding: 10px;
-			font-size: 16px;
+			padding: 15px 25px;
+			font-size: 17px;
 			margin-bottom: 10px;
 			margin-left: 20px;
+			border-radius: 15px;
+			background-color: rgba(95, 26, 89, 0.4);
+			color: white;
+			border: none;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+		}
+
+		/* Hover Effect */
+		button:hover {
+			background-color: rgba(95, 26, 89, 0.4);
+			transform: scale(1.05);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+		}
+
+		/* Focus Effect for Accessibility */
+		button:focus {
+			outline: none;
+			box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.6);
 		}
 
 		p {
@@ -112,10 +131,48 @@
 			align-items: center;
 			align-content: center;
 		}
+
+		#homepagetext {
+			text-decoration: none;
+			font-size: 22px;
+			position: fixed;
+			top: 20px;
+			left: 20px;
+			color: aliceblue;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			background: rgba(45, 26, 89, 0.1);
+			padding: 10px 15px;
+			width: 140px;
+			height: 40px;
+			border-radius: 10px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+			transition: transform 0.3s ease-in-out, background 0.3s;
+		}
+
+		/* Hover Effect */
+		#homepagetext:hover {
+			transform: scale(1.05);
+			background: rgba(255, 255, 255, 0.2);
+			box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+		}
+
+		#scoretext {
+			font-size: 25px;
+			font-weight: bold;
+		}
+
+		a {
+			font-weight: bold;
+			text-shadow: 1px 1px 3px black;
+		}
 	</style>
 </head>
 
 <body>
+	<a id="homepagetext" href="TermProject.html">Home Page</a>
 	<div id="all">
 		<h1> Memory Game </h1>
 
@@ -132,7 +189,7 @@
 			<div id="buttons">
 				<button class="startButton" onclick="startGame();">START</button>
 				<button class="resetButton" onclick="resetGame()" disabled>RESET</button>
-				<p>Score: <span id="score">0</span></p>
+				<p id="scoretext">Score: <span id="score">0</span></p>
 			</div>
 		</div>
 
