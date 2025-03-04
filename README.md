@@ -1,3 +1,6 @@
+## Portfolio and Game Link  
+You can find the **portfolio** and **game link** at the bottom of the page! 🔗 
+
 # Memory Game 🧠
 There are 5 cards that each card includes 1 letter: "Y", "A", "V", "U", "Z".
 After clicking START button you have 2 seconds to memorize the places. After cards covered you try to click to cards 
@@ -34,4 +37,4 @@ W3Schools website was used to look at CSS tools.
 
 
 ## Personal Portfolio includes Memory Game Link
-[Memory Game](https://ysk18.github.io/PersonalPortfolio/Portfolio/TermProject.html)
+[Personal Portfolio with Game](https://ysk18.github.io/PersonalPortfolio/Portfolio/TermProject.html)
