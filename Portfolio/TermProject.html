@@ -13,6 +13,7 @@
 			background-image: url("Background6.jpg");
 			background-size: cover;
 			background-color: midnightblue;
+			background-attachment: fixed;
 		}
 
 		h1 {
@@ -45,7 +46,6 @@
 			text-shadow: 0.3px 0.3px 1px skyblue;
 			border: solid;
 			background-color: ghostwhite;
-
 		}
 
 		img {
@@ -54,7 +54,6 @@
 			left: auto;
 			margin-left: 20px;
 			margin-right: 20px;
-
 		}
 
 		p {
@@ -62,7 +61,6 @@
 			color: ghostwhite;
 			font-size: 20px;
 			text-shadow: 1px 1px 3px black;
-
 		}
 
 		#introduction {
@@ -81,7 +79,6 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-
 		}
 
 		#academic {
@@ -111,71 +108,119 @@
 			letter-spacing: 2px;
 			margin-bottom: 20px;
 			text-shadow: 2px 2px 5px black;
+			margin-left: 15px;
 		}
 
-		/* Project Section*/
+		/* --- MODERN GRID PROJECT LAYOUT --- */
 		.projects-container {
-			display: flex;
-			gap: 15px;
-			overflow-x: auto;
-			/* Enables scrolling */
-			white-space: nowrap;
-			/* Prevents wrapping */
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 20px;
 			padding: 15px;
-			scroll-behavior: smooth;
-			/* Smooth scrolling */
 		}
 
-		/* Hide Scrollbar */
-		.projects-container::-webkit-scrollbar {
-			display: none;
-			/* Hides scrollbar in WebKit browsers */
-		}
-
-		/* Project Items*/
+		/* Project Items */
 		.project-item {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
-			justify-content: center;
+			justify-content: flex-start;
 			text-align: center;
 			background: rgba(255, 255, 255, 0.1);
-			/* Slight transparency*/
-			padding: 15px;
-			width: 90%;
-			/* Same size for all boxes */
-			height: 120px;
-			/* Adjust height for consistency */
-			border-radius: 10px;
-			max-width: 95%;
+			backdrop-filter: blur(5px);
+			padding: 20px;
 			border-radius: 10px;
 			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 			transition: transform 0.3s ease-in-out, background 0.3s;
+			box-sizing: border-box;
 		}
 
-		/* Hover Effect */
 		.project-item:hover {
-			transform: scale(1.05);
-			background: rgba(255, 255, 255, 0.2);
+			transform: scale(1.02);
+			background: rgba(255, 255, 255, 0.15);
 		}
 
-		/* Links*/
+		.project-item p {
+			margin: 0 0 10px 0;
+			white-space: normal; /* Allows text to wrap nicely */
+		}
+
+		/* Links */
 		.project-item a {
 			color: #ffcc00;
-			/* Bright color for visibility*/
 			text-decoration: none;
 			font-weight: bold;
+			font-size: 22px;
 			transition: color 0.3s;
 		}
 
 		.project-item a:hover {
 			color: #ffa500;
-			/* Slight color change on hover*/
 		}
 
-		/* Mobile-Friendly*/
-		@media (max-width: 600px) {
-			.project-item {
-				width: 90%;
+		/* Expandable Content Container */
+		.expand-btn {
+			background: #ffcc00;
+			color: black;
+			border: none;
+			padding: 8px 15px;
+			font-weight: bold;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+			transition: background 0.2s;
+			font-family: sans-serif;
+		}
+
+		.expand-btn:hover {
+			background: #ffa500;
+		}
+
+		.media-extension {
+			display: none; /* Hidden by default */
+			width: 100%;
+			margin-top: 15px;
+			padding-top: 15px;
+			border-top: 1px dashed rgba(255, 255, 255, 0.3);
+			white-space: normal;
+		}
+
+		.media-extension p {
+			font-size: 16px;
+			color: #ddd;
+			margin-bottom: 10px;
+		}
+
+		/* Placeholder for your actual images/videos */
+		.media-placeholder {
+			width: 100%;
+			min-height: 150px;
+			background: rgba(0, 0, 0, 0.4);
+			border: 2px dashed #ffcc00;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: ghostwhite;
+			font-family: sans-serif;
+			font-size: 14px;
+		}
+
+		/* Mobile-Friendly Layout Fixes */
+		@media (max-width: 768px) {
+			#intro {
+				flex-direction: column;
+			}
+			#introduction {
+				margin-top: 20px;
+				text-align: center;
+			}
+			#academic {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+			.projects-container {
+				grid-template-columns: 1fr;
 			}
 		}
 	</style>
@@ -187,58 +232,96 @@
 		<h1 id="about"> About me </h1>
 		<div id="content">
 			<div id="intro">
-				<img src="Profile.jpg" alt="Yavuz Selim Kara" width="231,6" height="308,8" style="border-radius: 20px;">
+				<img src="Profile.jpg" alt="Yavuz Selim Kara" width="231" height="309" style="border-radius: 20px;">
 				<p id="introduction">
 					I'm Yavuz Selim Kara. I'm a computer engineering student at
 					Istanbul Technical University.
 					I'll be graduated in 2027.
 					I am from Konya, and I stay in a
-					dorm at the Ayazaga campus. I like playing
+					dorm at Ayazaga Campus/ Istanbul Technical University. I like playing
 					table tennis, basketball, and volleyball.
 				</p>
 			</div>
 			<div id="academic">
 				<h2 style="margin-left: 10px;"> Academic Interests </h2>
-				<p style="margin-left: 20px; margin-top: 5px; text-align: center;">
-					I was on a project team for 4 months in 2022-2023.
-					I tried many parts of computer engineering, such as
-					cyber security, web developing, AI, machine learning, etc.
-					I participated in training programs organized by Cyber Security
-					and ACM school student clubs. Shortly, I'm trying to develop myself.
-					I noticed that I loved making algorithms and dealing with them.
-					So, at this time, I think I'll continue with the machine learning and AI parts.
-					However, this doesn't mean I won't make websites, games, or any other things.
-					All areas of computer engineering are interesting to me.
+				<p style="margin-left: 20px; margin-top: 15px; text-align: center; line-height: 1.6;">
+					My primary academic focus centers on advanced data structures, algorithmic optimization, and competitive programming—fields where I actively solve complex optimization problems and contribute. Through my hands-on software engineering roles at HAVELSAN and ASELSAN, I have developed a strong passion for systems programming, low-level architecture, and real-time computer graphics rendering using C, C++, and OpenGL ES 2.0. I thoroughly enjoy dealing with structural problem-solving, designing hardware components like custom CPUs in Verilog, and analyzing secure programming frameworks. Driven heavily by algorithmic complexity and high-performance systems, I maintain a deep fascination for all foundational layers of computer engineering, spanning from machine learning algorithms to robust backend infrastructures.
 				</p>
 			</div>
-
 		</div>
 	</div>
 
 	<h3 id="projects">Projects</h3>
 
 	<div class="projects-container">
+		<!-- 1. 3D Plane Simulation (NEW & EXPANDABLE) -->
 		<div class="project-item">
-			<p>🎥 Film Recommender: <a href="https://ysk18.github.io/FilmRecommender/"><br>What is the next movie?</a>
-			</p>
+			<p>✈️ 3D Plane Simulation: <br><span style="color: #ffcc00; font-weight: bold; font-size: 20px;">Flight Dynamics & Terrain Generation</span></p>
+			<button class="expand-btn" onclick="toggleProject(this)">View Media ↓</button>
+			<div class="media-extension">
+				<p>Showcasing rendering behavioral test specs and endlessly looped mirrored chunk optimization outputs.</p>
+				<!-- Replace this placeholder div with your <img> or <video> tags later -->
+				<div class="media-placeholder">
+					[ Drop your flight gameplay video / heightmap images here ]
+				</div>
+			</div>
 		</div>
+
+		<!-- 2. Connect 4 Game (EXPANDABLE) -->
+		<div class="project-item">
+			<p>🧩 Connect 4 Game in C: <a href="https://github.com/Ysk18/Connect4Bot"><br>Connect 4 Source</a></p>
+			<button class="expand-btn" onclick="toggleProject(this)">View Media ↓</button>
+			<div class="media-extension">
+				<p>Minimax decision tree state updates and depth execution logs.</p>
+				<!-- Replace this placeholder div with your <img> or <video> tags later -->
+				<div class="media-placeholder">
+					[ Drop your game logic diagram / bot execution screenshot here ]
+				</div>
+			</div>
+		</div>
+
+		<!-- 3. Film Recommender -->
+		<div class="project-item">
+			<p>🎥 Film Recommender: <a href="https://ysk18.github.io/FilmRecommender/"><br>What is the next movie?</a></p>
+		</div>
+
+		<!-- 4. Basic CPU Architecture (NEW FROM CV) -->
+		<div class="project-item">
+			<p>💻 Basic CPU: <br><span style="color: #ffcc00; font-weight: bold; font-size: 20px;">Verilog Architecture in Vivado</span></p>
+		</div>
+
+		<!-- 5. Android Game App -->
 		<div class="project-item">
 			<p>🎮 Android Game App: <a href="MemoryGame.html"><br>Star Chase</a></p>
 		</div>
+
+		<!-- 6. Memory Game -->
 		<div class="project-item">
 			<p>🕹️ Click this link to play: <a href="MemoryGame.html"><br>Memory Game</a></p>
 		</div>
+
+		<!-- 7. Other DSA Projects -->
 		<div class="project-item">
-			<p>🧩 Connect 4 game in C: <a href="https://github.com/Ysk18/Connect4Bot"><br>Connect 4</a>
-			</p>
-		</div>
-		<div class="project-item">
-			<p>📂 Other DSA Projects in C: <a
-					href="https://github.com/Ysk18?tab=repositories"><br>Github
-					Link</a>
-			</p>
+			<p>📂 Other DSA Projects in C: <a href="https://github.com/Ysk18?tab=repositories"><br>Github Link</a></p>
 		</div>
 	</div>
+
+	<!-- JavaScript to Handle Smooth Expansion Layouts -->
+	<script type="text/script" id="custom-expansion-logic">
+		// Pure native toggle handling
+	</script>
+	<script type="text/javascript">
+		function toggleProject(button) {
+			var extension = button.nextElementSibling;
+			if (extension.style.display === "block") {
+				extension.style.display = "none";
+				button.innerText = "View Media ↓";
+			} else {
+				extension.style.display = "block";
+				button.innerText = "Hide Media ↑";
+			}
+		}
+	</script>
 </body>
 
 </html>
